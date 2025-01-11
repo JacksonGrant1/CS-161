@@ -1,1 +1,57 @@
+#cs-161 HW assignment 1
+
+#1: Print your pet’s type and name using an f-String.
+
+pet_type = "cat"
+pet_name = "Pickles"
+print(f'I have a {pet_type} and their name is {pet_name}.')
+
+#2: Use input statements to take input and an f-String to print the results as shown.
+
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+savings = input("Enter your yearly savings: ")
+
+print(f"Hello {name}! You are currently {age} years old. If you save ${savings} each year, in 5 years\
+ you will have saved ${(int(savings) * 5)}. Your average monthly savings is ${(int(savings)/12): .2f}.")
+
+#3: Use an f-String to print out the number of seconds in the current month.  Have Python do the multiplication.
+
+
+months = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December"}
+
+import calendar
+import datetime
+
+date = datetime.datetime.now()
+month = date.month
+year = date.year
+
+weekday, days = calendar.monthrange(year, month)
+
+print(f'The number of seconds in {months[month]} is {(days*24*60*60)}.')
+
+#4: Use the // operator for integer division and % for the integer remainder.
+
+eggs = int(input('Enter your number of eggs: '))
+
+doz_eggs = eggs // 12
+left_eggs = eggs % 12
+
+print(f'This makes {doz_eggs} dozen eggs with {left_eggs} left over.')
+
+
+
 
